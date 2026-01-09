@@ -1,0 +1,10 @@
+
+// /assets/data/events.json
+[
+  {"date":"2026-02-14","name":"H2H Winter Crit #1","discipline":"Road","link":"https://www.bikereg.com/"},
+  {"date":"2026-03-08","name":"Ridgefield Spring Classic","discipline":"Gravel","link":"https://www.bikereg.com/"},
+  {"date":"2026-04-12","name":"Bethel Crit","discipline":"Road","link":"https://www.bikereg.com/"},
+  {"date":"2026-05-03","name":"Kenda Cup NE","discipline":"MTB","link":"https://www.bikereg.com/"},
+  {"date":"2026-06-21","name":"NECX State Champs","discipline":"CX","link":"https://www.bikereg.com/"}
+]
+

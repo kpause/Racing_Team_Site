@@ -1,0 +1,103 @@
+
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ridgefield Bicycle Racing Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ridgefield Bicycle Racing Team — serious racing, supportive culture, Ridgefield roots.">
+  https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;600&display=swap
+  /assets/style.css
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/">RBRT</a>
+      <nav>
+        <a href="/">About</a>
+        <a href="/">Team</a>
+        <a href="/">Calendar</a>
+        <a href="/">Results</a>
+        <a href="/">Sponsors</a>
+        <a class="cta" href="/">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Ridgefield Bicycle Racing Team</h1>
+      <p>Serious racing. Supportive culture. Ridgefield roots.</p>
+      <div class="buttons">
+        <a class="btn primary" href="/">Join the Team</a>
+        <a class="btn secondary" href="/">Upcoming Races</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlights">
+    <div class="wrap grid">
+      <article>
+        <h2>Upcoming</h2>
+        <ul id="upcoming-list">
+          <!-- populated by /assets/data/events.json -->
+        </ul>
+        <a href="/">Full Calendar →</a>
+      </article>
+      <article>
+        <h2>Latest Results</h2>
+        <ul id="results-list">
+          <!-- populated by /assets/data/results.json -->
+        </ul>
+        <a href="/">All Results →</a>
+      </article>
+      <article>
+        <h2>Sponsor Spotlight</h2>
+        <div class="sponsor-strip">
+          <img src="/">
+          <img src="/">
+        </div>
+        <a href="/">Become a Sponsor →</a>
+      </article>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Ridgefield Bicycle Racing Team</p>
+      <p>
+        <a href="/">Instagram</a> ·
+        <a href="/">Strava</a> ·
+        <a href="/">Policies</a> ·
+        <a href="/">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lightweight data load for upcoming & results
+    fetch('/assets/data/events.json').then(r => r.json()).then(events => {
+      const ul = document.getElementById('upcoming-list');
+      events.slice(0, 5).forEach(ev => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${ev.date}</strong> — ${ev.name} (${ev.discipline}) 
+                        ${ev.link}Register</a>`;
+        ul.appendChild(li);
+      });
+    });
+
+    fetch('/assets/data/results.json').then(r => r.json()).then(results => {
+      const ul = document.getElementById('results-list');
+      results.slice(0, 5).forEach(res => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${res.event}</strong> — ${res.rider} (${res.place})`;
+        ul.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
+

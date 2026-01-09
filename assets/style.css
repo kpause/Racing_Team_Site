@@ -1,0 +1,28 @@
+
+/* /assets/style.css */
+:root{
+  --green:#156D3B; --charcoal:#222; --gray:#6B6E70; --yellow:#FFC63A; --white:#FFF;
+}
+*{box-sizing:border-box}
+body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--charcoal); background:#fafafa}
+.wrap{max-width:1080px; margin:0 auto; padding:0 1rem}
+.site-header{background:var(--white); border-bottom:1px solid #eee; position:sticky; top:0; z-index:10}
+.site-header .logo{font-family:Montserrat; font-weight:700; color:var(--green); text-decoration:none; font-size:1.25rem; margin-right:1rem}
+.site-header nav a{margin:0 .5rem; text-decoration:none; color:var(--charcoal)}
+.site-header nav .cta{background:var(--green); color:#fff; padding:.4rem .7rem; border-radius:.25rem}
+.hero{background:linear-gradient(120deg, var(--green), #0f4a27); color:#fff; padding:4rem 0}
+.hero h1{font-family:Montserrat; font-size:2.25rem; margin:0 0 .5rem}
+.hero .buttons .btn{display:inline-block; margin-right:.75rem; padding:.6rem .9rem; border-radius:.3rem; text-decoration:none}
+.btn.primary{background:var(--yellow); color:#000}
+.btn.secondary{background:#fff; color:#000}
+.highlights .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; padding:2rem 0}
+.highlights article{background:#fff; border:1px solid #eee; border-radius:.5rem; padding:1rem}
+.sponsor-strip img{height:38px; margin-right:.5rem; filter:saturate(1.1)}
+.site-footer{padding:2rem 0; color:#555}
+@media (prefers-color-scheme: dark){
+  body{background:#111; color:#ddd}
+  .site-header{background:#161616; border-color:#222}
+  .site-header nav a{color:#ddd}
+  .highlights article{background:#1a1a1a; border-color:#222}
+}
+
